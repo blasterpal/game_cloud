@@ -1,23 +1,23 @@
+require 'fog'
+
 class GameServer
 
-  def initialize(config={})
-    
+  include Ec2GameServer
+  
+  def config
+    CONFIG['game_server']
   end
 
-  def status
-   'up'
+  def compute
+    @compute
   end
 
-  def stop
-    true
+  def storage
+    @storage
   end
-
-  def restart
-    true
-  end
-
-  def start(type='')
-    true
+  
+  def id
+   config['id']
   end
 
 end

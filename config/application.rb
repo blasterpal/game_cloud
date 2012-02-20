@@ -58,3 +58,5 @@ module MinecraftEc2
     config.assets.version = '1.0'
   end
 end
+
+CONFIG = YAML.load_file("config/cloud_config.yml")
