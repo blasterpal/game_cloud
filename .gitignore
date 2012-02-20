@@ -6,7 +6,7 @@
 
 # Ignore bundler config
 /.bundle
-/cloud_config.yml
+/config/cloud_config.yml
 /local
 /bin
 
