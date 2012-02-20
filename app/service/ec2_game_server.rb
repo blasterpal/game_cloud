@@ -21,4 +21,26 @@ module Ec2GameServer
     server.stop
   end
 
+  def public_ip
+    server.public_ip_address
+  end
+
+  def private_ip
+    server.private_ip_address
+  end
+
+
+  private
+
+  def get_new_ip_address
+    compute.allocate_address.public_ip
+    compute.associate_address(id,compute.addresses.first.public_ip)
+  end
+
+  def release_all_ip_addresses
+    compute.addresses.each do |ip|
+      compute.release_address(ip.public_ip)
+    end
+  end
+
 end
