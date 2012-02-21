@@ -9,6 +9,16 @@ module Ec2GameServer
     compute.servers.get(id)
   end
 
+  def provision
+    get_new_ip_address
+    start
+  end
+
+  def decommission
+    stop 
+    release_all_ip_addresses
+  end
+
   def status
     server.state
   end
