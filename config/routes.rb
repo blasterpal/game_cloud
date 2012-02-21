@@ -1,7 +1,13 @@
 MinecraftEc2::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  
+  match 'admin' => 'home#admin', :as => :admin
+  match 'admin/start' => 'home#start', :as => :start
+  match 'admin/stop' => 'home#stop', :as => :stop
+  match 'status' => 'home#status', :as => :status
+  
+  # match ':controller(/:action(/:id))(.:format)'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -48,7 +54,7 @@ MinecraftEc2::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'home#status'
 
   # See how all your routes lay out with "rake routes"
 

@@ -5,6 +5,10 @@ module Ec2GameServer
     @storage = Fog::Storage.new({:provider => 'AWS', :aws_access_key_id => config['aws']['access_key'], :aws_secret_access_key => config['aws']['secret_access_key']})
   end
   
+  def friendly_name
+    "blasterpal's Minecraft Server"
+  end
+
   def server
     compute.servers.get(id)
   end
@@ -17,6 +21,18 @@ module Ec2GameServer
   def decommission
     stop 
     release_all_ip_addresses
+  end
+  
+  def running?
+    status == 'running'
+  end
+  
+  def stopped?
+    status == 'stopped'
+  end
+
+  def stopping?
+    status == 'stopping'
   end
 
   def status

@@ -1,0 +1,23 @@
+#header
+  .server_name
+    %h2
+      = @server.friendly_name
+#body
+  .details
+    = "Server Status: #{@server.status}"
+    %br
+    = "IP: #{@server.public_ip}"
+  .actions
+    - case @server.status
+    - when 'stopped'
+      = link_to 'Start Server', start_path
+      %br
+      = refresh_page
+    - when 'running'
+      = link_to 'Stop Server', stop_path
+    - when 'stopping'
+      = refresh_page
+    - when 'pending'
+      = refresh_page
+
+
