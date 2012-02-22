@@ -6,6 +6,7 @@ gem 'sqlite3'
 gem 'mysql2', '0.3.11'
 gem 'devise', '2.0.4'
 gem 'haml', '3.1.4'
+gem 'compass'
 
 group :test do
   gem "capybara", '1.1.2'

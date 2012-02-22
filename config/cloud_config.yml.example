@@ -1,3 +1,9 @@
 aws:
-  access_key: XXXXXXXXXXXXXXXXXXXXXX
-  secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+  secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXX 
+
+game_server:
+  provider: aws
+  id: i-xxxxxx
+  storage_id: 
+  host_name:  
