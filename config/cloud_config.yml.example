@@ -7,3 +7,7 @@ game_server:
   id: i-xxxxxx
   storage_id: 
   host_name:  
+  
+admin:
+  user: hbeaver
+  password: yeahapassword1

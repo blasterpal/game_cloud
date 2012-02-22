@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  http_basic_authenticate_with :name => "blasterpal", :password => "zanjonah!!", :except =>  :status
+  http_basic_authenticate_with :name => CONFIG['admin']['user'], :password => CONFIG['admin']['password'], :except =>  :status
   before_filter :init_server
 
   def admin 
