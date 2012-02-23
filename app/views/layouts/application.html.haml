@@ -1,16 +1,30 @@
-!!!
-%head
-  %title
-    = @server.friendly_name 
-  =#http://blog.danielfischer.com/2011/04/18/quickstart-guide-to-using-compass-haml-sass-scss-with-rails-3/
-  = stylesheet_link_tag    "application", :media => "all"
-  -#= stylesheet_link_tag 'screen', :media => 'screen, projection'
-  = stylesheet_link_tag 'print', :media => 'print'
-  /[if lt IE 8]
-    = stylesheet_link_tag 'ie', :media => 'screen, projection'
-  = javascript_include_tag "application"
-  = csrf_meta_tags
-%body
-  #container
-    = yield
+!!! Strict
+%html{:xmlns => 'http://www.w3.org/1999/xhtml', 'xmlns:fb' => 'http://www.facebook.com/2008/fbml'}
+  %head
+    %title
+      = @server.friendly_name 
+    =#http://blog.danielfischer.com/2011/04/18/quickstart-guide-to-using-compass-haml-sass-scss-with-rails-3/
+    = stylesheet_link_tag    "application", :media => "all"
+    -#= stylesheet_link_tag 'screen', :media => 'screen, projection'
+    = stylesheet_link_tag 'print', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie', :media => 'screen, projection'
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .two-col
+      #header
+        %h1 Game Server Management
+      #sidebar
+        %ul
+          %li
+            %a(href="#") Nav #1
+          %li
+            %a(href="#") Nav #2
+          %li
+            %a(href="#") Nav #3
+      = yield
+      
+      #footer
+        All rights reserved to Hank Beaver for some of these as yet determined ideas. 2011-#{Time.now.year}
 
