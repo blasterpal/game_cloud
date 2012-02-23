@@ -1,13 +1,12 @@
-#header
-  .server_name
+%header
     %h2
       = @server.friendly_name
-#body
+%section
   .details
     = "Server Status: #{@server.status}"
     %br
     = "IP: #{@server.public_ip}"
-  .actions
+    
     - case @server.status
     - when 'stopped'
       = link_to 'Start Server', start_path

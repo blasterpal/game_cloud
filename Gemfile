@@ -6,7 +6,8 @@ gem 'sqlite3'
 gem 'mysql2', '0.3.11'
 gem 'devise', '2.0.4'
 gem 'haml', '3.1.4'
-gem 'compass'
+
+
 
 group :test do
   gem "capybara", '1.1.2'
@@ -21,6 +22,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'execjs', '1.3.0'
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
 end
 
 gem 'jquery-rails'
