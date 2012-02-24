@@ -6,13 +6,14 @@
     =#http://blog.danielfischer.com/2011/04/18/quickstart-guide-to-using-compass-haml-sass-scss-with-rails-3/
     = stylesheet_link_tag    "application", :media => "all"
     -#= stylesheet_link_tag 'screen', :media => 'screen, projection'
-    = stylesheet_link_tag 'print', :media => 'print'
+    -#= stylesheet_link_tag 'print', :media => 'print'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie', :media => 'screen, projection'
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
-    .two-col
+    %body
+      
+      .two-col
       #header
         %h1 Game Server Management
       #sidebar

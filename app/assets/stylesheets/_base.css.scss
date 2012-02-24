@@ -1,13 +1,13 @@
 $blueprint-font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 $blueprint-grid-columns : 24;
-$blueprint-grid-width   : 30px;
+$blueprint-grid-width   : 40px;
 $blueprint-grid-margin  : 10px;
 $font-color             : #333;
 
 @import "compass/reset";
 @import "compass/utilities";
 @import "blueprint";
-@import "blueprint/grid";
+//@import "blueprint/grid";
 @import "blueprint/typography";
-
+@import "blueprint/scaffolding"
 

@@ -1,22 +1,23 @@
-%content
+#content
+  %p
     %h2
       = @server.friendly_name
-  %section
-    .details
-      = "Server Status: #{@server.status}"
-      %br
-      = "IP: #{@server.public_ip}"
-      
-      - case @server.status
-      - when 'stopped'
-        = link_to 'Start Server', start_path
+    %section
+      .details
+        = "Server Status: #{@server.status}"
         %br
-        = refresh_page
-      - when 'running'
-        = link_to 'Stop Server', stop_path
-      - when 'stopping'
-        = refresh_page
-      - when 'pending'
-        = refresh_page
+        = "IP: #{@server.public_ip}"
+        
+        - case @server.status
+        - when 'stopped'
+          = link_to 'Start Server', start_path
+          %br
+          = refresh_page
+        - when 'running'
+          = link_to 'Stop Server', stop_path
+        - when 'stopping'
+          = refresh_page
+        - when 'pending'
+          = refresh_page
 
 
