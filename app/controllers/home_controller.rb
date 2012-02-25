@@ -17,11 +17,13 @@ class HomeController < ApplicationController
   end
 
   def status
-    
+    @admin = false
+    render :action => 'admin'
   end
  
  private  
   def init_server
     @server = GameServer.new
+    @admin = true
   end
 end

@@ -1,13 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Nobile:400,700);
+
 $blueprint-font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 $blueprint-grid-columns : 24;
 $blueprint-grid-width   : 40px;
 $blueprint-grid-margin  : 10px;
-$font-color             : #333;
+
+$header-font-family: "Nobile", sans-serif;
+$font-color             : #eee;
+$body-background-color  : #1C1E22;
+$container-background-color : #29252E;
+
+$vertical-margin : 24px;
+$horizontal-margin : $vertical-margin * 8;
 
 @import "compass/reset";
 @import "compass/utilities";
 @import "blueprint";
-//@import "blueprint/grid";
+@import "blueprint/grid";
 @import "blueprint/typography";
-@import "blueprint/scaffolding"
+@import "compass/css3/border-radius";
+@import "compass/css3/font-face";
 

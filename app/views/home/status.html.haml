@@ -1,9 +1,0 @@
-#header
-  .server_name
-    %h2
-      = @server.friendly_name
-#body
-  .details
-    = "Server Status: #{@server.status}"
-    %br
-    = "IP: #{@server.public_ip}"

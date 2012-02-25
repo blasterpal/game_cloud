@@ -3,15 +3,28 @@
 body {
     @include blueprint-typography(true);
     @include blueprint-debug;
-.two-col {
-  @include container;
-  @include showgrid();
-  background-color: #cccccc;
-  #header, #footer {
-    @include column(24); }
-  #sidebar {
-    @include column(4); }
-  #content {
-    @include column(20, true); } }
+    //@include showgrid();
+    background-color: $body-background-color;
+    margin-top: $vertical-margin;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  
+    .container {
+        @include border-radius(10px, 10px);
+        @include container;
+        background-color: $container-background-color;
+        #header, #footer {
+            @include column($blueprint-grid-columns);
+           h1 {
+              font-family: "Nobile";
+          }
+          #content {
+            @include column($blueprint-grid-columns);
+            padding-bottom: 100px;
+            margin-bottom: 40px;
+          }
+        }
+    }
 
 }
