@@ -22,7 +22,8 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'execjs', '1.3.0'
   gem 'uglifier', '>= 1.0.3'
-  gem 'compass-rails'
+  #gem 'compass-rails'
+  #gem 'fancy-buttons'
 end
 
 gem 'jquery-rails'

@@ -1,5 +1,7 @@
 @import "base";
 
+$section-margins : 10px 0px 20px 20px;
+
 body {
     @include blueprint-typography(true);
     @include blueprint-debug;
@@ -9,20 +11,49 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    font-family: $body-font-family;
   
     .container {
-        @include border-radius(10px, 10px);
         @include container;
-        background-color: $container-background-color;
+        margin-left: 20%;
         #header, #footer {
-            @include column($blueprint-grid-columns);
+            @include column(16);
            h1 {
               font-family: "Nobile";
           }
-          #content {
-            @include column($blueprint-grid-columns);
-            padding-bottom: 100px;
-            margin-bottom: 40px;
+        }
+        #content {
+          background-color: $container-background-color;
+          @include border-radius(10px, 10px);
+          @include column(14);
+          padding-bottom: 10%;
+          margin-bottom: 10px;
+          section#status{
+            @include border-radius(10px, 10px);
+            @include column(10);
+            margin: $section-margins;
+            background-color: $body-background-color;
+            h3.running {
+                color: green; 
+            }
+            h3.stopped{
+                color: red;
+            }    
+            h3.pending, h3.stopping{
+                color: yellow;
+            }
+            pre#ip{
+              font-family:$console-output-font;
+            }
+          }
+          section#actions{
+            @include border-radius(10px, 10px);
+            @include column(4);
+            margin: $section-margins;
+            background-color: $body-background-color;
+            button{
+              margin: 20px;
+            }
           }
         }
     }

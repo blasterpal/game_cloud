@@ -1,4 +1,8 @@
+//headline font
 @import url(http://fonts.googleapis.com/css?family=Nobile:400,700);
+//paragraph font
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic);
+@import url(http://fonts.googleapis.com/css?family=Molengo);
 
 $blueprint-font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 $blueprint-grid-columns : 24;
@@ -6,9 +10,13 @@ $blueprint-grid-width   : 40px;
 $blueprint-grid-margin  : 10px;
 
 $header-font-family: "Nobile", sans-serif;
+$body-font-family: 'Molengo', sans-serif;
+$console-output-font: "Monaco", serif; 
+
 $font-color             : #eee;
 $body-background-color  : #1C1E22;
 $container-background-color : #29252E;
+
 
 $vertical-margin : 24px;
 $horizontal-margin : $vertical-margin * 8;
@@ -20,4 +28,15 @@ $horizontal-margin : $vertical-margin * 8;
 @import "blueprint/typography";
 @import "compass/css3/border-radius";
 @import "compass/css3/font-face";
+@import 'fancy-buttons';
+
+// default mixins
+button {@include fancy-button}
+button#stop {
+    @include fancy-button(#B70300, 1em, 2px, 1px);
+}
+button#start {
+    @include fancy-button(#3AB700, 1em, 2px, 1px);
+}
+
 

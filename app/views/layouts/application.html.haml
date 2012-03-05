@@ -4,19 +4,39 @@
     %title
       = @server.friendly_name 
     =#http://blog.danielfischer.com/2011/04/18/quickstart-guide-to-using-compass-haml-sass-scss-with-rails-3/
-    = stylesheet_link_tag    "application", :media => "all"
-    -#= stylesheet_link_tag 'screen', :media => 'screen, projection'
-    -#= stylesheet_link_tag 'print', :media => 'print'
-    /[if lt IE 8]
-      = stylesheet_link_tag 'ie', :media => 'screen, projection'
-    = javascript_include_tag "application"
-    = csrf_meta_tags
+    = stylesheet_link_tag  "bootstrap", :media => "all"
+    = stylesheet_link_tag  "application_bootstrap", :media => "all"
+    /Le HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      %script{:src => '//html5shim.googlecode.com/svn/trunk/html5.js'}
+      = csrf_meta_tags
     %body
-      .container 
-        #header
-          %h1 Game Server Management
+      %div{:class=>['navbar', 'navbar-fixed-top']}
+        .navbar-inner
+          .container
+            %a{:class=>['btn', 'btn-navbar'], :data=> {:toggle => 'collapse', :target => '.nav-collapse'}}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a{:class=>'brand', :href=> '#'}
+              Game Server Management #{image_tag("stylistica/24x24/settings.png")}
+            .nav-collapse
+              %ul.nav
+                %li{:class => 'active'}
+                  %a{:href => '#'}
+                    Home
+                %li
+                  %a{:href => '#about'}
+                %li
+                  %a{:href => '#contact'}
+      /page container
+      .container
         = yield
-        
-        #footer
+      
+      .container
+        .clear
+        %p
           All rights reserved to Hank Beaver for some of these as yet determined ideas. 2011-#{Time.now.year}
+        %p
+          Icons by http://dryicons.com
 
