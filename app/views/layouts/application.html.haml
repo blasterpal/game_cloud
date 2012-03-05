@@ -4,8 +4,9 @@
     %title
       = @server.friendly_name 
     =#http://blog.danielfischer.com/2011/04/18/quickstart-guide-to-using-compass-haml-sass-scss-with-rails-3/
-    = stylesheet_link_tag  "bootstrap", :media => "all"
+    = stylesheet_link_tag  "application", :media => "all"
     = stylesheet_link_tag  "application_bootstrap", :media => "all"
+    = javascript_include_tag "application"
     /Le HTML5 shim, for IE6-8 support of HTML5 elements
     /[if lt IE 9]
       %script{:src => '//html5shim.googlecode.com/svn/trunk/html5.js'}
@@ -30,10 +31,10 @@
                 %li
                   %a{:href => '#contact'}
       /page container
-      .container
+      %div{:class =>['container','content']}
         = yield
       
-      .container
+      %div{:class => ['container','footer']}
         .clear
         %p
           All rights reserved to Hank Beaver for some of these as yet determined ideas. 2011-#{Time.now.year}

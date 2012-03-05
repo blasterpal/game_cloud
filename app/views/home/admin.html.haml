@@ -1,28 +1,37 @@
-#content
-  %section#status
+%section{:id => 'server'}
+  .page-header
     %h3 
-      = "Server Name: #{@server.friendly_name}"
-    %h3{:class => @server.status}
+      Server:
+      %small
+        =@server.friendly_name
+  .row
+    .span2
+      %h3
+        Status
+    .span10   
       = @server.status.upcase
-    %h3
-      IP: 
+  .row
+    .span2
+      %h3
+        IP: 
+    .span10
       %pre#ip
         #{@server.public_ip}
-  
-    - if @admin
-      %section#actions 
-        %h3 
-          - case @server.status
-          - when 'stopped'
-            %button#start
-              Start Server
-            -#= button_to 'Start Server', start_path
-            = refresh_page
-          - when 'running'
-            %button#stop
-              Stop Server
-            -#= button_to 'Stop Server', stop_path
-          - when 'stopping'
-            = refresh_page
-          - when 'pending'
-            = refresh_page
+
+  - if @admin
+    %section#actions 
+      %h3 
+        - case @server.status
+        - when 'stopped'
+          %button#start
+            Start Server
+          -#= button_to 'Start Server', start_path
+          = refresh_page
+        - when 'running'
+          %button#stop
+            Stop Server
+          -#= button_to 'Stop Server', stop_path
+        - when 'stopping'
+          = refresh_page
+        - when 'pending'
+          = refresh_page
